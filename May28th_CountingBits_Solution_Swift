@@ -1,0 +1,24 @@
+
+
+class Solution {
+    func countBits(_ num: Int) -> [Int] {
+        var onesArr: [Int] = []
+        // Converting number to binary
+        for number in 0...num {
+            let binaryNum = String(number, radix: 2)
+           // print(binaryNum)
+            var onesCount = 0
+             for c in binaryNum {
+                if c == "1" {
+                    onesCount += 1
+                }
+            }
+            onesArr.append(onesCount)
+            onesCount = 0
+        }     
+        return onesArr
+    }
+}
+
+// Time Complexity: O(nk) = O(n)
+//Space Complexity: (1)
