@@ -12,3 +12,19 @@ class Solution {
   return dict.keys.first!
   }
 }
+
+/* Solution 2
+
+class Solution {
+    func singleNumber(_ nums: [Int]) -> Int {
+      
+      var ans = 0
+      
+      for num in nums {
+        ans = (ans ^ num)
+    } 
+  return ans
+  }
+}
+
+*/
