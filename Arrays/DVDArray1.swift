@@ -72,6 +72,38 @@ printingDVD()
 
 print("****************************")
 
+
+//Reading Elements from an Array
+
+
+print(dvdCollection[7].name)
+print(dvdCollection[10].name)
+print(dvdCollection[3].name)
+
+// Writing Items into an Array with a Loop
+
+print("****************************")
+print("Creating an array of squared numbers")
+print("****************************")
+var squaredNumbers: [Int] = Array(repeating: 0, count: 10)
+
+for index in 0..<10 {
+	let num = index + 1
+	squaredNumbers[index] = (num * num)
+}
+
+print(squaredNumbers)
+print("****************************")
+
+print("Reading Items from an Array with a Loop")
+
+print("****************************")
+
+for num in squaredNumbers {
+	print(num)
+}
+
+print("****************************")
 /*
 Arrays % swift DVDArray1.swift
 Printing Single DVD instance
@@ -115,6 +147,26 @@ The Avengers, directed by Josh Wheadon, released in 2012
 The Avengers, directed by Josh Wheadon, released in 2012
 The Avengers, directed by Josh Wheadon, released in 2012
 ****************************
-
+The Avengers2
+The Avengers
+The Incredibles
+****************************
+Creating an array of squared numbers
+****************************
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+****************************
+Reading Items from an Array with a Loop
+****************************
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+****************************
 */
 
