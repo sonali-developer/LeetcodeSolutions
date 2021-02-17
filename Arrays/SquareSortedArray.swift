@@ -54,7 +54,7 @@ class Solution {
                 squaredArray[i] = nums[i]
             }
         }
-        
+                
         var splicingIndex = 0
         var leftHalf: [Int] = []
         let first = squaredArray[0]
@@ -67,12 +67,13 @@ class Solution {
                 leftHalf.append(squaredArray[i])
             }
         }
-
-        let rightHalf = Array(squaredArray[splicingIndex..<squaredArray.count])
-    
         countingSort(of: &leftHalf, withMaximumValue: first)
-        leftHalf.append(contentsOf: rightHalf)
-
+        
+        if splicingIndex > 0 {
+            let rightHalf = Array(squaredArray[splicingIndex..<squaredArray.count])
+            leftHalf.append(contentsOf: rightHalf)
+        }
+      
         for i in 0..<leftHalf.count {
             squaredArray[i] = leftHalf[i] * leftHalf[i]
         }
@@ -82,14 +83,23 @@ class Solution {
 }
 
 let sol = Solution()
-let result = sol.sortedSquares([-4,-1,0,3,10])
-let result2 = sol.sortedSquares([-7,-3,2,3,11])
-print(result)
-print(result2)
+let numArrays = [
+[-5,-3,-2,-1],
+[-4,-1,0,3,10],
+[-7,-3,2,3,11]
+]
+
+var result: [Int] = []
+
+for numArray in numArrays {
+	result = sol.sortedSquares(numArray)
+	print(result)
+}
+
 
 /* Output 
-
- Arrays % swift SquareSortedArray.swift
+Arrays % swift SquareSortedArray.swift
+[1, 4, 9, 25]
 [0, 1, 9, 16, 100]
 [4, 9, 9, 49, 121]
 */
