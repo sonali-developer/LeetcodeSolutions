@@ -73,5 +73,4 @@ print(result)
 Arrays % swift CountEvenNumbers.swift
 5
 
-
 */
